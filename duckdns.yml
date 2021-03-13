@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  duckdns:
+    image: ghcr.io/linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - SUBDOMAINS=lazyliving,prupp,speedoflight
+      - TOKEN=XXX
+    volumes:
+      - /mnt/storage/duckdns:/config
+    restart: unless-stopped

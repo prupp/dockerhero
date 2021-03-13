@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  sabnzbd:
+    image: ghcr.io/linuxserver/sabnzbd
+    container_name: sabnzbd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /mnt/storage/sabnzbd:/config
+      - /mnt/storage/downloads:/downloads
+      - /mnt/storage/incomplete-downloads:/incomplete-downloads
+    ports:
+      - 8081:8080
+      - 9091:9090
+    restart: unless-stopped
