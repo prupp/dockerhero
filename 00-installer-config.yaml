@@ -1,0 +1,23 @@
+# This is the network config written by 'subiquity'
+network:
+  bonds:
+    bond0:
+      dhcp4: true
+      interfaces:
+      - eno1
+      - enp2s0
+      parameters:
+        mode: balance-tlb
+        transmit-hash-policy: layer2
+  ethernets:
+    eno1: {}
+    enp2s0: {}
+  version: 2
+
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eno1:
+      dhcp4: true
