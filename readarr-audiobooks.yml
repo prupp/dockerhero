@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  readarr-audiobooks:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr-audiobooks
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /mnt/storage/readarr-audiobooks:/config
+      - /mnt/storage/audiobooks:/books
+      - /mnt/storage/downloads:/downloads
+    ports:
+      - 8787:8787
+    restart: unless-stopped

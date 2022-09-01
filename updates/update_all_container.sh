@@ -1,6 +1,7 @@
 #!/bin/bash
 
 /home/rancher/updates/update_radarr.sh
+/home/rancher/updates/update_readarr-audiobooks.sh
 /home/rancher/updates/update_plex.sh
 /home/rancher/updates/update_sabnzbd.sh
 /home/rancher/updates/update_sonarr.sh
