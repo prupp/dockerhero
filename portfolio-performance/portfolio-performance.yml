@@ -1,0 +1,20 @@
+version: "2.1"
+services:
+  portfolio-performance:
+    container_name: portfolio-performance
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=910
+    volumes:
+      - /mnt/storage/portfolio-performance/workspace:/opt/portfolio/workspace
+      - /mnt/storage/portfolio-performance/config:/config
+    ports:
+      - 5800:5800
+    restart: unless-stopped
+    # Path to dockerfile.
+    # '.' represents the current directory in which
+    # docker-compose.yml is present.
+    build: .
