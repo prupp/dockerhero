@@ -1,10 +1,14 @@
 #!/bin/bash
+set -e
 
-/home/rancher/updates/update_radarr.sh
-/home/rancher/updates/update_readarr-audiobooks.sh
-/home/rancher/updates/update_plex.sh
-/home/rancher/updates/update_sabnzbd.sh
-/home/rancher/updates/update_sonarr.sh
-/home/rancher/updates/update_swag.sh
-/home/rancher/updates/update_oauth.sh
-/home/rancher/updates/update_duckdns.sh
+BASE="/home/rancher/updates"
+
+$BASE/update_container.sh radarr
+$BASE/update_container.sh plex
+$BASE/update_container.sh sabnzbd
+$BASE/update_container.sh sonarr
+$BASE/update_container.sh swag
+$BASE/update_container.sh oauth
+$BASE/update_container.sh portainer
+
+docker image prune -f
